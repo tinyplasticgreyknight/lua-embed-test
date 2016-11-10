@@ -1,0 +1,11 @@
+[package]
+name = "versiontest"
+version = "0.1.0"
+authors = ["GreyKnight <tinyplasticgreyknight@yahoo.com>"]
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+lua = "*"
+libc = "*"

@@ -1,0 +1,7 @@
+[package]
+name = "luahost"
+version = "0.1.0"
+authors = ["GreyKnight <tinyplasticgreyknight@yahoo.com>"]
+
+[dependencies]
+lua = "*"
