@@ -36,11 +36,11 @@ spotless: clean
 $(BUILDDIR):
 	$(MKDIR) $(BUILDDIR)
 
-$(BUILDDIR)/$(HOSTFILE): $(BUILDDIR) $(HOSTDIR)/$(HOSTFILE)
-	$(COPY) $(HOSTDIR)/$(HOSTFILE) $@
+$(BUILDDIR)/$(HOSTFILE): $(HOSTDIR)/$(HOSTFILE) $(BUILDDIR)
+	$(COPY) $< $@
 
-$(BUILDDIR)/$(LIBFILE): $(BUILDDIR) $(LIBDIR)/$(PLIBFILE)
-	$(COPY) $(LIBDIR)/$(PLIBFILE) $@
+$(BUILDDIR)/$(LIBFILE): $(LIBDIR)/$(PLIBFILE) $(BUILDDIR)
+	$(COPY) $< $@
 
 $(HOSTDIR)/$(HOSTFILE): $(shell find $(HOST)/src -name '*.rs')
 	(cd $(HOST); cargo build)
